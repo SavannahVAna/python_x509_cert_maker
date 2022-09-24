@@ -1,0 +1,6 @@
+.vscode
+__pycache__
+basic_certs
+author_cert.pem
+num.json
+root_cert.pem
