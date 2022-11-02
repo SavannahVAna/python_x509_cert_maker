@@ -12,7 +12,7 @@ def parser():
             cer = x509.load_pem_x509_certificate(m)
             print("certificate validity from " + str(cer.not_valid_before) + " to " + str(cer.not_valid_after)+ "\nbeginning verification:")
             pubk = cer.public_key()
-        if(isinstance(pubk, RSAPublicKey)):
+        if(isinstance(pubk, RSAPublicKey)): #we check for the validity of the cerificate key
             try:
                 pubk.verify(
                     cer.signature,

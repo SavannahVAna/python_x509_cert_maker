@@ -11,7 +11,7 @@ from cryptography.hazmat.primitives.asymmetric import ec
 
 def them(number):
     number+=1
-    a = open("author_cert.pem", "rb")
+    a = open("author_cert.pem", "rb") #loads the registration authority that will issue the certificate
     r = a.read()
     cert = x509.load_pem_x509_certificate(r)
     y = True

@@ -60,7 +60,7 @@ def makeroo():
         x509.SubjectAlternativeName([x509.DNSName(u"esiea.fr")]),
         critical=False,
     ).sign(root_key, hashes.SHA256(), default_backend())
-
+    #next we save the certificates as .pem files
     with open("root_cert.pem", 'wb') as f:
         f.write(root_cert.public_bytes(serialization.Encoding.PEM))
     with open("author_cert.pem", 'wb') as d:

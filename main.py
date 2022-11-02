@@ -6,8 +6,8 @@ import rootcertmaker
 import json
 
 u = True
-if not isfile("root_cert.pem"):
-    rootcertmaker.makeroo()
+if not isfile("root_cert.pem"): #verifies if root certificate has already been created 
+    rootcertmaker.makeroo() #if not launches the script to create it
     print("root and registration authority created succesfully...")
     number = {"nb" : 1}
 else:
