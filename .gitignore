@@ -4,3 +4,4 @@ basic_certs
 author_cert.pem
 num.json
 root_cert.pem
+private_key.pem

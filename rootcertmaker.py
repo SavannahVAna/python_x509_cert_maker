@@ -65,5 +65,14 @@ def makeroo():
         f.write(root_cert.public_bytes(serialization.Encoding.PEM))
     with open("author_cert.pem", 'wb') as d:
         d.write(registration_cert.public_bytes(serialization.Encoding.PEM))
+    #we need the registration authority private key for signing future certificates
+    pem = cert_key.private_bytes(
+        encoding=serialization.Encoding.PEM,
+        format=serialization.PrivateFormat.TraditionalOpenSSL,
+        encryption_algorithm=serialization.NoEncryption()
+    )
+    with open('private_key.pem', 'wb') as pem_out:
+        pem_out.write(pem)
+
 
 
