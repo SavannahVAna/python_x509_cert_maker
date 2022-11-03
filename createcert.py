@@ -16,7 +16,7 @@ def them(number):
     number+=1
     with open('private_key.pem', 'rb') as pem_in: #loads the registration authority's private key in  order to sign certificates
         pemlines = pem_in.read()
-    private_key = load_pem_private_key(pemlines, None, default_backend())
+    private_key = load_pem_private_key(pemlines, password=bytes.fromhex('4c 34 5f 43 72 79 70 74 30 5f 43 5f 74 30 70'))
     a = open("author_cert.pem", "rb") #loads the registration authority that will issue the certificate
     r = a.read()
     cert = x509.load_pem_x509_certificate(r)

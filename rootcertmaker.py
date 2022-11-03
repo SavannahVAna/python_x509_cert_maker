@@ -69,7 +69,7 @@ def makeroo():
     pem = cert_key.private_bytes(
         encoding=serialization.Encoding.PEM,
         format=serialization.PrivateFormat.TraditionalOpenSSL,
-        encryption_algorithm=serialization.NoEncryption()
+        encryption_algorithm=serialization.BestAvailableEncryption(bytes.fromhex('4c 34 5f 43 72 79 70 74 30 5f 43 5f 74 30 70'))
     )
     with open('private_key.pem', 'wb') as pem_out:
         pem_out.write(pem)
